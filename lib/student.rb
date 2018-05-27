@@ -63,7 +63,6 @@ class Student
     sql = <<-SQL
     SELECT SUM(grade) IN students
     WHERE grade = 9
-    IN students
     SQL
     DB[:conn].execute(sql)
  end
