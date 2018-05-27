@@ -66,4 +66,5 @@ class Student
     IN students
     SQL
     DB[:conn].execute(sql)
+ end
 end
