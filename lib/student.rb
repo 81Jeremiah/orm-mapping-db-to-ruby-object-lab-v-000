@@ -61,7 +61,7 @@ class Student
 
   def self.count_all_students_in_grade_9
     sql = <<-SQL
-    SELECT SUM(grade)
+    SELECT SUM(grade) IN students
     WHERE grade = 9
     IN students
     SQL
