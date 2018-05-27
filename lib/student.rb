@@ -12,7 +12,7 @@ class Student
   def self.all
     sql = <<-SQL
       SELECT *
-      FROM students
+      FROM students;
       SQL
 
       DB[:conn].execute(sql).collect do |row|
@@ -25,7 +25,7 @@ class Student
       SELECT *
       FROM students
       WHERE name = ?
-      LIMIT 1
+      LIMIT 1;
     SQL
 
     DB[:conn].execute(sql,name).collect do |row|
@@ -36,7 +36,7 @@ class Student
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
-      VALUES (?, ?)
+      VALUES (?, ?);
     SQL
 
     DB[:conn].execute(sql, self.name, self.grade)
@@ -48,21 +48,21 @@ class Student
       id INTEGER PRIMARY KEY,
       name TEXT,
       grade TEXT
-    )
+    );
     SQL
 
     DB[:conn].execute(sql)
   end
 
   def self.drop_table
-    sql = "DROP TABLE IF EXISTS students"
+    sql = "DROP TABLE IF EXISTS students;"
     DB[:conn].execute(sql)
   end
 
   def self.count_all_students_in_grade_9
     sql = <<-SQL
     SELECT SUM(grade) FROM students
-    WHERE grade = 9
+    WHERE grade = 9;
     SQL
     DB[:conn].execute(sql)
  end
