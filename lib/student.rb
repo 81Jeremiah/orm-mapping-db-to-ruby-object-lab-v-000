@@ -67,7 +67,7 @@ class Student
     WHERE grade = 9;
     SQL
     DB[:conn].execute(sql)
-    binding.pry
+    #binding.pry
  end
 
  def self.students_below_12th_grade
